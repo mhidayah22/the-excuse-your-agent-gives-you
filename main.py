@@ -22,6 +22,8 @@ def output_dir():
 
 
 def main():
+    if "\n" in LINE or not 1 <= len(LINE) <= 200:
+        raise SystemExit("entry line must be one line of 1-200 characters")
     out = output_dir()
     os.makedirs(out, exist_ok=True)
     path = os.path.join(out, "entry.txt")
